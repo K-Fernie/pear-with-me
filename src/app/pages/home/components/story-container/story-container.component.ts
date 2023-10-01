@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {CdkDragDrop} from "@angular/cdk/drag-drop";
 
 @Component({
     selector: 'app-story-container',
@@ -7,16 +7,20 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
     styleUrls: ['story-container.component.css']
 })
 export class StoryContainerComponent {
-    resourceList = ["Cody", "Alicia", "Katy", "Sanjeev", "Sara", "Rajibul", "Spencer"];
+
+    groups = ['Pears Forever', 'Pear Force 2', 'Pear Me Up Scotty', 'Pear of The Rings'];
+    posts: { [group: string]: string[] } = {};
 
     onDrop(event: CdkDragDrop<string[]>) {
         console.log("Dropped")
-        if (event.previousContainer === event.container) {
-            // If the item was dropped within the same container
-            moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    }
+
+    onAddStory(event: any) {
+        console.log(event);
+        if (!this.posts[event]) {
+            this.posts[event] = ['Testing New'];
         } else {
-            // If the item was dropped in a different container
-            transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+            this.posts[event].push('TESTING NEW POST');
         }
     }
 }
