@@ -1,0 +1,19 @@
+.post-it {
+    background-color: #fffad1; /* Post-it note color */
+    padding: 20px;
+    border: 1px solid #ffd700; /* Border color */
+    width: 150px; /* Adjust width as needed */
+    position: relative;
+    margin: 20px; /* Adjust margin as needed */
+}
+
+.post-it::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -20px; /* Half of the width of the triangular tip */
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #ffd700 transparent transparent; /* Border color */
+}

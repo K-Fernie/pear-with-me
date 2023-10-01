@@ -1,0 +1,20 @@
+<div class="flex">
+    <!-- Main content area -->
+    <div class="flex-1 p-4">
+        <app-products-header></app-products-header>
+        <app-story-container></app-story-container>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="w-48 bg" style="background-color: #8ea1b1">
+        <h1 class="max-w-full text-gray-700 text-center p-8">Engineers</h1>
+        <div>
+            <div *ngFor="let resource of resourceList" class="flex flex-col items-center drag-item" cdkDrag>
+                <div matTooltip="{{resource}}"
+                     class="bg-green-200 m-2 rounded-full h-16 w-16 flex flex-col items-center shadow-lg border-2 border-green-300">
+                    <img src="./assets/{{resource}}.svg" alt="Pixel Char" class="h-16 w-16">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
