@@ -10,17 +10,21 @@ export class StoryContainerComponent {
 
     groups = ['Pears Forever', 'Pear Force 2', 'Pear Me Up Scotty', 'Pear of The Rings'];
     posts: { [group: string]: string[] } = {};
+    floaters: string[] = [];
+    storyData:string = '';
 
     onDrop(event: CdkDragDrop<string[]>) {
         console.log("Dropped")
     }
 
     onAddStory(event: any) {
-        console.log(event);
+        if(event==='floaters'){
+            this.floaters.push('');
+        }
         if (!this.posts[event]) {
-            this.posts[event] = ['Testing New'];
+            this.posts[event] = [''];
         } else {
-            this.posts[event].push('TESTING NEW POST');
+            this.posts[event].push('');
         }
     }
 }

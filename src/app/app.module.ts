@@ -23,6 +23,8 @@ import {NgOptimizedImage} from "@angular/common";
 import {StoryContainerComponent} from './pages/home/components/story-container/story-container.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -50,7 +52,9 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
         MatSnackBarModule,
         NgOptimizedImage,
         MatTooltipModule,
-        DragDropModule
+        DragDropModule,
+        MatInputModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
